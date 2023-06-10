@@ -607,7 +607,7 @@ if (MSVC_RUNTIME_DYNAMIC)
     CMAKE_CXX_FLAGS_RELWITHDEBINFO
   )
   foreach(variable ${CMAKE_COMPILER_FLAGS_VARIABLES})
-    string(REGEX REPLACE "/MT" "/MD" ${variable} "${${variable}}")
+    string(REGEX REPLACE "/M(T|D)d?" "/MD" ${variable} "${${variable}}")
   endforeach()
 endif ()
 
